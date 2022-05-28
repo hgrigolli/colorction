@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WEB MOBILE | Colorction</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Henrique Grigolli">
+    <meta name="tia" content="41821661">
+    <meta name="turma" content="02J">
+    <meta name="viewport" content="width=device-width">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet">
+    <link href="../css/colorction.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<section id="fundo">
+    <header>
+        <img class="logo" width="57.61%" src = "images/logo.svg" alt="Colorction logo" />
+        <p>ID: <%= id %></p>
+        <p>Voc&ecirc; encontrou <%=qtde%> cores de 16277216</p>
+        <hr>
+    </header>
+    <main>
+        <% cores.forEach(function(cor) { %>
+            <div style="background-color: <%= cor._id %>" class="mask mask<%= cor.blobno %>" onclick="colorDetail(this)"></div>
+        <% }); %>
+    </main>
+    <footer>
+        <div id="add-color" class="outside-circle">
+            <label for="file-upload"  >
+            <div class="inside-circle">
+                <span></span>
+            </div>
+            </label>
+            <input id="file-upload" type="file" accept="image/*" onchange="uploadFile()" />
+        </div>
+    </footer>
+</section>
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="nome"></p>
+        <p id="hex"></p>
+        <p id="amostra"></p>
+    </div>
+</div>
+</body>
+<script src="../js/colorction.js"></script>
+<script>
+    let span = document.getElementsByClassName("close")[0];
+    let modal = document.getElementById("myModal");
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+</html>

@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet">
-    <link href="css/colorction.css" rel="stylesheet" type="text/css">
+    <link href="../css/colorction.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <section id="fundo">
@@ -27,12 +27,14 @@
       <div class="login">
         <h2>Bem vindo!</h2>
         <div>
-          <label for="login-id">Digite seu ID:</label>
-          <input id="login-id" type="text"/>
-          <button>Entrar</button>
+          <form id="form-login" action="/login" method="post">
+            <label for="username">Digite seu ID:</label>
+            <input id="username" name="username" placeholder="Username" type="text"/>
+            <button type="submit" form="form-login" value="Entrar">Entrar</button>
+          </form>
         </div>
       </div>
     </section>
   </body>
-  <script src="js/colorction.js"></script>
+  <script src="../js/colorction.js"></script>
 </html>

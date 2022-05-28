@@ -1,0 +1,25 @@
+@import "base.css";
+
+body {
+  background-color: var(--light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark);
+}
+
+section {
+  background-color: var(--lighter);
+  padding: 40px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+}
+
+.login {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: column;
+}

@@ -1,27 +1,4 @@
-/* Variáveis */
-:root {
-  --darker: #2d2923;
-  --dark: #56514B; /*use in light bg */
-  --medium: #999990;
-  --light: #BDBBAD;
-  --lighter: #E7E5DD; /*use in dark bg*/
-  --action: #b5b3ab;
-}
-
-/* Fontes */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-/* Reset */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-/* Estilos Básicos*/
-* {
-  font-family: 'Expletus Sans', cursive;
-}
+@import "base.css";
 
 body {
   background-color: var(--light);
@@ -37,7 +14,10 @@ section {
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-flow: column wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap
 }
 
 .login {
@@ -47,82 +27,152 @@ section {
   flex-direction: column;
 }
 
-/* Mobile */
-section {
-  width: 100%;
-  height: calc(100% - 80px);
+hr {
+  color: var(--darker);
 }
 
 footer {
-  margin-bottom: 0;
-}
-
-button {
-  appearance: none;
-  background-color: var(--action);
-  border: 1px solid rgba(27, 31, 35, 0.15);
-  border-radius: 6px;
-  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
-  box-sizing: border-box;
-  color: var(--darker);
-  cursor: pointer;
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 20px;
-  list-style: none;
-  padding: 3px 13px;
+  background-color: var(--medium);
+  width: calc(100% + 80px);
+  height: 70px;
+  margin-left: -40px;
+  z-index: 1;
   position: relative;
-  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: middle;
-  white-space: nowrap;
-  word-wrap: break-word;
+  display: flex;
+  justify-content: center;
 }
 
-button:hover {
-  background-color: #F3F4F6;
+#amostra {
+  background-color: var(--amostra);
+  height: 50px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.outside-circle {
+  height: 80px;
+  width: 80px;
+  background-color: var(--medium);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inside-circle {
+  height: 60px;
+  width: 60px;
+  background-color: var(--bg);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.inside-circle > span {
+  height: calc(100% - 15px);
+  width: calc(100% - 15px);
+  -webkit-mask-size: calc(100% - 15px);
+  mask-size: calc(100% - 15px);
+  -webkit-mask: url("../images/colorpicker.svg") no-repeat center;
+  mask: url("../images/colorpicker.svg") no-repeat center;
+  background-color: var(--dark);
+}
+
+
+main {
+  display: flex;
+  flex-flow: column wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  overflow: auto;
+}
+
+main::-webkit-scrollbar {
+  display: none;
+}
+
+
+.mask {
+  width: 130px;
+  height: 130px;
+  border: 1px black;
+}
+
+.mask1 {
+  -webkit-mask: url("../images/blob/blob1.svg") no-repeat center;
+  mask: url("../images/blob/blob1.svg") no-repeat center;
+}
+
+.mask2 {
+  -webkit-mask: url("../images/blob/blob2.svg") no-repeat center;
+  mask: url("../images/blob/blob2.svg") no-repeat center;
+}
+
+.mask3 {
+  -webkit-mask: url("../images/blob/blob3.svg") no-repeat center;
+  mask: url("../images/blob/blob3.svg") no-repeat center;
+}
+
+.mask4 {
+  -webkit-mask: url("../images/blob/blob4.svg") no-repeat center;
+  mask: url("../images/blob/blob4.svg") no-repeat center;
+}
+
+.mask5 {
+  -webkit-mask: url("../images/blob/blob5.svg") no-repeat center;
+  mask: url("../images/blob/blob5.svg") no-repeat center;
+}
+
+.mask6 {
+  -webkit-mask: url("../images/blob/blob6.svg") no-repeat center;
+  mask: url("../images/blob/blob6.svg") no-repeat center;
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 20px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
   text-decoration: none;
-  transition-duration: 0.1s;
-}
-
-button:disabled {
-  background-color: #FAFBFC;
-  border-color: rgba(27, 31, 35, 0.15);
-  color: #959DA5;
-  cursor: default;
-}
-
-button:active {
-  background-color: #EDEFF2;
-  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
-  transition: none 0s;
-}
-
-button:focus {
-  outline: 1px transparent;
-}
-
-button:before {
-  display: none;
-}
-
-button:-webkit-details-marker {
-  display: none;
-}
-
-
-
-/* Demais dispositivos */
-@media only screen and (min-width: 800px) {
-  section {
-    width: 400px;
-    height: 60%;
-  }
-
-  footer {
-    margin-bottom: -62px;
-  }
+  cursor: pointer;
 }
