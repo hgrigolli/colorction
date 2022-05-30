@@ -6,6 +6,9 @@
         "type": "git",
         "url": "git+https://github.com/mongodb-developer/mongodb-express-rest-api-example.git"
     },
+    "scripts": {
+        "start": "cd server && npm start"
+    },
     "keywords": [
         "mongodb",
         "node",

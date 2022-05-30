@@ -2,7 +2,7 @@ const { MongoClient } = require('mongodb');
 const fs = require('fs');
 const path = require('path');
 
-const credentials = fs.readFileSync(path.join(__dirname, 'X509-cert.pem'));
+const credentials = process.env.CERT;
 
 const client = new MongoClient('mongodb+srv://cluster0.f3nk9.mongodb.net/?authSource=%24external&authMechanism=MONGODB-X509&retryWrites=true&w=majority', {
   sslKey: credentials,
