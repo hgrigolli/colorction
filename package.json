@@ -35,6 +35,7 @@
         "express-fileupload": "^1.4.0",
         "express-session": "^1.17.3",
         "html": "^1.0.0",
-        "mongodb": "^3.6.6"
+        "mongodb": "^3.6.6",
+        "get-image-colors": "^4.0.1"
     }
 }
