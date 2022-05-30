@@ -9,6 +9,9 @@
     "scripts": {
         "start": "cd server && npm start"
     },
+    "engines": {
+        "node": "16.x"
+    },
     "keywords": [
         "mongodb",
         "node",
